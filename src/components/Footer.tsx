@@ -1,5 +1,6 @@
 import React from 'react';
 import { Code2, Phone, Mail, MapPin, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -14,7 +15,6 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold">HyperCraft</h3>
-                <p className="text-sm bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Empowering Businesses in the Digital Age</p>
               </div>
             </div>
             <p className="text-gray-400 leading-relaxed">
@@ -38,39 +38,39 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                <Link to="/" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                <Link to="/about" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                <Link to="/services" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#industries" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                <Link to="/industries" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
                   Industries
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                <Link to="/contact" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/privacy" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                <Link to="/privacy" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terms" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                <Link to="/terms" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
                   Terms of Service
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -80,22 +80,34 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#services" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">Custom Software Development</a>
+                <Link to="/services/custom-software-development" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                  Custom Software Development
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">Cloud Solutions</a>
+                <Link to="/services/cloud-solutions" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                  Cloud Solutions
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">AI & Data Analytics</a>
+                <Link to="/services/ai-data-analytics" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                  AI & Data Analytics
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">Odoo Integration</a>
+                <Link to="/services/odoo-integration" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                  Odoo Integration
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">Salesforce Services</a>
+                <Link to="/services/salesforce-services" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                  Salesforce Services
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">Cybersecurity</a>
+                <Link to="/services/cybersecurity" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
+                  Cybersecurity
+                </Link>
               </li>
             </ul>
           </div>
@@ -134,12 +146,12 @@ const Footer = () => {
               © 2025 HyperCraft. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="/privacy" className="text-gray-400 hover:text-white transform hover:translate-x-1 transition-all duration-300">
+              <Link to="/privacy" className="text-gray-400 hover:text-white transform hover:translate-x-1 transition-all duration-300">
                 Privacy Policy
-              </a>
-              <a href="/terms" className="text-gray-400 hover:text-white transform hover:translate-x-1 transition-all duration-300">
+              </Link>
+              <Link to="/terms" className="text-gray-400 hover:text-white transform hover:translate-x-1 transition-all duration-300">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -2,6 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Premium SaaS Gradient Background Theme */
+body {
+  background: linear-gradient(135deg, 
+    #667eea 0%, 
+    #764ba2 25%, 
+    #f093fb 50%, 
+    #f5576c 75%, 
+    #4facfe 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Override for specific sections to maintain readability */
+.bg-white {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+.bg-gray-50 {
+  background: rgba(248, 250, 252, 0.9) !important;
+  backdrop-filter: blur(10px);
+}
+
+.bg-gray-900 {
+  background: rgba(17, 24, 39, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
 /* Custom animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }

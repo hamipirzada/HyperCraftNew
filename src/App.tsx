@@ -16,7 +16,6 @@ import Terms from './pages/Terms';
 import ServiceDetail from './pages/ServiceDetail';
 import BlogPost from './pages/BlogPost';
 import ScrollToTop from './components/ScrollToTop';
-import ChatWidget from './components/ChatWidget';
 import NewsletterPopup from './components/NewsletterPopup';
 
 function App() {
@@ -41,7 +40,6 @@ function App() {
           <Route path="/terms" element={<Terms />} />
         </Routes>
         <Footer />
-        <ChatWidget />
         <NewsletterPopup />
       </div>
     </Router>

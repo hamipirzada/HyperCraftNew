@@ -30,6 +30,14 @@ const Header = () => {
     { name: 'Salesforce Services', slug: 'salesforce-services' }
   ];
 
+  const handleServicesMouseEnter = () => {
+    setIsServicesOpen(true);
+  };
+
+  const handleServicesMouseLeave = () => {
+    setIsServicesOpen(false);
+  };
+
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${
       isScrolled 
@@ -81,18 +89,21 @@ const Header = () => {
             {/* Services Mega Menu */}
             <div 
               className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
+              onMouseEnter={handleServicesMouseEnter}
+              onMouseLeave={handleServicesMouseLeave}
             >
-              <button className={`font-medium transition-all duration-300 relative group flex items-center space-x-1 ${
-                location.pathname.startsWith('/services') 
-                  ? 'text-indigo-600' 
-                  : 'text-gray-700 hover:text-indigo-600'
-              }`}>
+              <Link 
+                to="/services"
+                className={`font-medium transition-all duration-300 relative group flex items-center space-x-1 ${
+                  location.pathname.startsWith('/services') 
+                    ? 'text-indigo-600' 
+                    : 'text-gray-700 hover:text-indigo-600'
+                }`}
+              >
                 <span>Services</span>
                 <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
-              </button>
+              </Link>
               
               {isServicesOpen && (
                 <div className="absolute top-full left-0 mt-2 w-80 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 p-6 transform opacity-100 scale-100 transition-all duration-300">

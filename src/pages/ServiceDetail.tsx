@@ -536,16 +536,9 @@ const ServiceDetail = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200 inline-flex items-center justify-center space-x-2"
+                className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200"
               >
-                <span>Book Free Consultation</span>
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-              <Link
-                to="/case-studies"
-                className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-xl font-semibold hover:border-indigo-600 hover:text-indigo-600 dark:hover:border-indigo-400 dark:hover:text-indigo-400 transform hover:scale-105 transition-all duration-200"
-              >
-                View More Case Studies
+                Book Free Consultation
               </Link>
             </div>
           </div>
