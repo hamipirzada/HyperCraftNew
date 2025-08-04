@@ -39,7 +39,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+    <header className={`fixed top-0 w-full z-50 backdrop-blur-xl transition-all duration-500 ${
       isScrolled 
         ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-gray-200/50' 
         : 'bg-transparent'
@@ -49,14 +49,14 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 transform hover:scale-105 transition-all duration-300 group">
             <img 
-              src="/logo copy copy.png" 
+              src="/logo1.png" 
               alt="HyperCraft Logo" 
-              className="h-12 w-12 object-contain transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500"
+              className="h-20 w-20 object-contain transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500"
             />
             <div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              {/* <h1 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
                 HyperCraft
-              </h1>
+              </h1> */}
             </div>
           </Link>
 

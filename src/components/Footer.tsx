@@ -10,8 +10,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-2 rounded-xl transform hover:scale-110 hover:rotate-3 transition-all duration-300">
-                <Code2 className="h-6 w-6 text-white" />
+              <div className="">
+                 <img 
+                    src="/logo1.png" 
+                    alt="HyperCraft Logo" 
+                    className="h-12 w-12 object-contain transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-500"
+            />
               </div>
               <div>
                 <h3 className="text-xl font-bold">HyperCraft</h3>
@@ -23,7 +27,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://linkedin.com/company/hypercraft"
+                href="https://www.linkedin.com/company/hypercraft1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gray-800 p-2 rounded-lg hover:bg-indigo-600 transform hover:scale-110 hover:-translate-y-1 transition-all duration-300"
@@ -62,16 +66,7 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
-              <li>
-                <Link to="/privacy" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/terms" className="text-gray-400 hover:text-white transform hover:translate-x-2 transition-all duration-300 inline-block">
-                  Terms of Service
-                </Link>
-              </li>
+            
             </ul>
           </div>
 

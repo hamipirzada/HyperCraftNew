@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, Clock, Globe, MessageCircle, Video, Calendar, User } from 'lucide-react';
 import AnimatedSection from '../components/AnimatedSection';
 
+import emailjs from 'emailjs-com';
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -21,17 +23,46 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+    const templateParams = {
+    from_name: formData.name,
+    from_email: formData.email,
+    phone: formData.phone,
+    company: formData.company,
+    service: formData.service,
+    message: formData.message
+  };
+
+  try {
+    const result = await emailjs.send(
+      'service_8h0ybp4',     // e.g., 'gmail_service'
+      'template_wlrhzod',    // e.g., 'contact_form'
+      templateParams,
+      'gQAGzkreAAN4vTWQL'      // e.g., 'XyzABC123'
+    );
+    if (result.status === 200) {
+    alert('Message sent successfully!');
+    }
+  } catch (error) {
+    console.error(error);
+    alert('Failed to send message. Please try again later.');
+  }
+
     setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
   };
 
+  
+
   const handleMeetingBooking = (meetingType: string) => {
     setSelectedMeetingType(meetingType);
-    // In a real app, this would integrate with a calendar booking system
-    alert(`Booking ${meetingType}... You'll receive a confirmation email with meeting details within 5 minutes.`);
+
+    if (meetingType === 'Phone Call') {
+      // Initiate phone call
+      window.location.href = 'tel:+919622286781';
+    } else {
+      alert(`Booking ${meetingType}... You'll receive a confirmation email with meeting details within 5 minutes.`);
+    }
   };
 
   const services = [
@@ -53,7 +84,9 @@ const Contact = () => {
       title: 'Video Consultation',
       description: 'Discuss your project requirements via video call',
       duration: '30 minutes',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-500 to-cyan-500',
+      disabled: true
+
     },
     {
       id: 'phone',
@@ -83,7 +116,7 @@ const Contact = () => {
               Get In <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Touch</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Ready to transform your business? Let's discuss your project and explore 
+              Ready to transform your business? Let's discuss your project and explore
               how we can help you achieve your digital goals with innovative technology solutions.
             </p>
           </div>
@@ -99,7 +132,7 @@ const Contact = () => {
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Schedule a Meeting</h2>
               </div>
-              
+
               <p className="text-gray-600 dark:text-gray-400 mb-8 text-lg">
                 Choose your preferred meeting type and book a time that works for you.
               </p>
@@ -124,14 +157,24 @@ const Contact = () => {
                           </p>
                         </div>
                       </div>
-                      
+
                       <p className="text-gray-600 dark:text-gray-400 mb-6">{meeting.description}</p>
-                      
-                      <button
+
+                      {/* <button
                         onClick={() => handleMeetingBooking(meeting.title)}
                         className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 px-6 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200"
                       >
                         Book Now
+                      </button> */}
+                      <button
+                        onClick={() => !meeting.disabled && handleMeetingBooking(meeting.id)}
+                        disabled={meeting.disabled}
+                        className={`w-full text-white py-3 px-6 rounded-xl font-semibold transition-all duration-200 ${meeting.disabled
+                            ? 'bg-gray-400 cursor-not-allowed'
+                            : 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:shadow-lg transform hover:scale-105'
+                          }`}
+                      >
+                        {meeting.disabled ? 'Coming Soon' : 'Book Now'}
                       </button>
                     </div>
                   );
@@ -140,7 +183,7 @@ const Contact = () => {
 
               <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
                 <p className="text-blue-800 dark:text-blue-200">
-                  <strong>Note:</strong> All meetings are conducted by our senior consultants. You'll receive a 
+                  <strong>Note:</strong> All meetings are conducted by our senior consultants. You'll receive a
                   confirmation email with meeting details within 5 minutes of booking.
                 </p>
               </div>
@@ -158,7 +201,7 @@ const Contact = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Send us a Message</h3>
               </div>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -279,7 +322,7 @@ const Contact = () => {
             <AnimatedSection animation="fadeInRight">
               <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Contact Information</h3>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4 group">
                     <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg p-3 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
@@ -287,8 +330,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Call Us</h4>
-                      <a 
-                        href="tel:+919622415387" 
+                      <a
+                        href="tel:+919622415387"
                         className="text-indigo-600 dark:text-indigo-400 hover:text-purple-600 dark:hover:text-purple-400 font-medium text-lg transition-colors"
                       >
                         +91-9622415387
@@ -303,8 +346,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Email Us</h4>
-                      <a 
-                        href="mailto:info@hypercraft.in" 
+                      <a
+                        href="mailto:info@hypercraft.in"
                         className="text-purple-600 dark:text-purple-400 hover:text-pink-600 dark:hover:text-pink-400 font-medium text-lg transition-colors"
                       >
                         info@hypercraft.in
@@ -334,7 +377,7 @@ const Contact = () => {
                   <Clock className="h-6 w-6" />
                   <h3 className="text-xl font-bold">Business Hours</h3>
                 </div>
-                
+
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span>Monday - Friday</span>
@@ -349,7 +392,7 @@ const Contact = () => {
                     <span className="font-semibold">Closed</span>
                   </div>
                 </div>
-                
+
                 <div className="mt-6 pt-6 border-t border-white/20">
                   <div className="flex items-center space-x-2">
                     <Globe className="h-5 w-5" />
@@ -379,23 +422,23 @@ const Contact = () => {
         <AnimatedSection animation="fadeInUp">
           <div className="mt-20 bg-gray-50 dark:bg-gray-800 rounded-3xl p-12">
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">Frequently Asked Questions</h3>
-            
+
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">How quickly can you start my project?</h4>
                 <p className="text-gray-600 dark:text-gray-400">We typically begin new projects within 1-2 weeks after the initial consultation and project scoping.</p>
               </div>
-              
+
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Do you provide ongoing support?</h4>
                 <p className="text-gray-600 dark:text-gray-400">Yes, we offer comprehensive support and maintenance packages to ensure your systems run smoothly.</p>
               </div>
-              
+
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">What industries do you specialize in?</h4>
                 <p className="text-gray-600 dark:text-gray-400">We work with SMEs, startups, e-commerce, healthcare, education, and manufacturing sectors.</p>
               </div>
-              
+
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Can you work with our existing systems?</h4>
                 <p className="text-gray-600 dark:text-gray-400">Absolutely! We specialize in integrating new solutions with existing infrastructure and legacy systems.</p>

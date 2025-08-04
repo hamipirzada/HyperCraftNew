@@ -184,11 +184,11 @@ const About = () => {
           ].map((item, index) => {
             const IconComponent = item.icon;
             return (
-              <AnimatedSection
-                key={index}
-                animation="scaleIn"
-                delay={index * 0.1}
-              >
+              // <AnimatedSection
+              //   key={index}
+              //   animation="scaleIn"
+              //   delay={index * 0.1}
+              // >
                 <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 group">
                   <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-xl p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                     <IconComponent className="h-8 w-8 text-white" />
@@ -196,7 +196,7 @@ const About = () => {
                   <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{item.title}</h4>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{item.description}</p>
                 </div>
-              </AnimatedSection>
+              // </AnimatedSection>
             );
           })}
         </div>
