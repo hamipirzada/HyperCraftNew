@@ -7,33 +7,33 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: 'Rajesh Kumar',
-      position: 'CEO, TechStart Solutions',
-      company: 'Mumbai, India',
+      name: 'Andy',
+      position: 'CEO, Mate4Tech',
+      company: 'Brisbane, Australia',
       rating: 5,
       text: 'HyperCraft transformed our entire business operations with their custom software solution. The team\'s expertise in cloud migration saved us 40% in operational costs while improving our system performance dramatically.',
       image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop'
     },
     {
-      name: 'Priya Sharma',
-      position: 'CTO, EduTech Innovations',
-      company: 'Bangalore, India',
+      name: 'Showket Bhat',
+      position: 'CEO, GoExalt System',
+      company: 'Maryland, USA',
       rating: 5,
       text: 'The AI and data analytics solution provided by HyperCraft gave us insights we never had before. Our student engagement increased by 60% and our platform now serves over 10,000 active users seamlessly.',
       image: 'https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop'
     },
     {
-      name: 'Mohammed Ali',
-      position: 'Founder, RetailPro',
-      company: 'Delhi, India',
+      name: 'Deep',
+      position: 'MD, Dollar & Sense',
+      company: 'Australia',
       rating: 5,
       text: 'Their Odoo integration completely streamlined our inventory management and sales processes. What used to take hours now happens automatically. The ROI was evident within the first month of implementation.',
       image: 'https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop'
     },
     {
-      name: 'Sarah Johnson',
-      position: 'Operations Director, GlobalTrade Inc',
-      company: 'Singapore',
+      name: 'Aaqib Bashir Mir',
+      position: 'Co-Founder, Future Intelligent',
+      company: 'UAE',
       rating: 5,
       text: 'HyperCraft\'s cybersecurity assessment and implementation protected us from potential threats we didn\'t even know existed. Their 24/7 managed IT services give us peace of mind to focus on growth.',
       image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop'
