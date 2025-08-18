@@ -331,10 +331,10 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Call Us</h4>
                       <a
-                        href="tel:+919622415387"
+                        href="tel:+919622286781"
                         className="text-indigo-600 dark:text-indigo-400 hover:text-purple-600 dark:hover:text-purple-400 font-medium text-lg transition-colors"
                       >
-                        +91-9622415387
+                        +91-9622286781
                       </a>
                       <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">Available 9 AM - 6 PM IST</p>
                     </div>
