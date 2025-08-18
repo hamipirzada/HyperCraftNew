@@ -39,10 +39,10 @@ const CallToAction = () => {
               <h3 className="text-xl font-bold mb-3">Call Us Now</h3>
               <p className="text-white/80 mb-4">Speak directly with our experts</p>
               <a
-                href="tel:+919622415387"
+                href="tel:+919622286781"
                 className="text-white font-semibold hover:text-white/80 transition-colors"
               >
-                +91-9622415387
+                +91-9622286781
               </a>
             </div>
           </AnimatedSection>
