@@ -150,16 +150,16 @@ const Testimonials = () => {
             <p className="text-gray-600 dark:text-gray-400 mb-8 text-lg">Trusted by innovative companies</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60 hover:opacity-100 transition-opacity duration-300">
               <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 h-20 flex items-center justify-center">
-                <span className="text-gray-600 dark:text-gray-400 font-semibold">TechStart</span>
+                <span className="text-gray-600 dark:text-gray-400 font-semibold">GoExalt</span>
               </div>
               <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 h-20 flex items-center justify-center">
-                <span className="text-gray-600 dark:text-gray-400 font-semibold">EduTech</span>
+                <span className="text-gray-600 dark:text-gray-400 font-semibold">Dollar & Sense</span>
               </div>
               <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 h-20 flex items-center justify-center">
-                <span className="text-gray-600 dark:text-gray-400 font-semibold">RetailPro</span>
+                <span className="text-gray-600 dark:text-gray-400 font-semibold">Mate4Tech</span>
               </div>
               <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 h-20 flex items-center justify-center">
-                <span className="text-gray-600 dark:text-gray-400 font-semibold">GlobalTrade</span>
+                <span className="text-gray-600 dark:text-gray-400 font-semibold">Future Intelligent</span>
               </div>
             </div>
           </div>
