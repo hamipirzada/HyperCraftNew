@@ -147,7 +147,7 @@ const Terms = () => {
                 <p>If you have any questions about these Terms of Service, please contact us:</p>
                 <div className="space-y-2">
                   <p><strong>Email:</strong> info@hypercraft.in</p>
-                  <p><strong>Phone:</strong> +91-9622415387</p>
+                  <p><strong>Phone:</strong> +91-9622286781</p>
                   <p><strong>Address:</strong> Srinagar, Jammu and Kashmir 193201, India</p>
                 </div>
               </div>
