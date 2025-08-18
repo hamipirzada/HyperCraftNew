@@ -80,11 +80,11 @@ const Hero = () => {
                   <ArrowRight className="h-5 w-5 transform group-hover:translate-x-1 transition-all duration-300" />
                 </a>
                 <a
-                  href="tel:+919622415387"
+                  href="tel:+919622286781"
                   className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold hover:border-indigo-600 hover:text-indigo-600 hover:bg-indigo-50 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
                 >
                   <Phone className="h-5 w-5 transform group-hover:rotate-12 transition-all duration-300" />
-                  <span>+91-9622415387</span>
+                  <span>+91-9622286781</span>
                 </a>
               </div>
             </AnimatedSection>
