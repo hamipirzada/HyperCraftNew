@@ -128,10 +128,10 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Call Us</h4>
                     <a 
-                      href="tel:+919622415387" 
+                      href="tel:+919622286781" 
                       className="text-blue-600 hover:text-blue-700 font-medium"
                     >
-                      +91-9622415387
+                      +91-9622286781
                     </a>
                     <p className="text-sm text-gray-600 mt-1">Available 9 AM - 6 PM IST</p>
                   </div>
